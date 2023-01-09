@@ -12,13 +12,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-  create: (context) => HomeViewModelCubit(),
-  child: BlocConsumer<HomeViewModelCubit, HomeViewModelState>(
-  listener: (context, state) {
+      create: (context) => HomeViewModelCubit(),
+       child: BlocConsumer<HomeViewModelCubit, HomeViewModelState>(
+         listener: (context, state) {
   },
-  builder: (context, state) {
-    var homeData = HomeViewModelCubit.get(context);
-    return Scaffold(
+    builder: (context, state) {return Scaffold(
 body: SafeArea(
   top: true,
   child:   SingleChildScrollView(child: Padding(
@@ -107,7 +105,8 @@ class CustomTextField extends StatelessWidget{
       decoration: InputDecoration(
         alignLabelWithHint: true,
         hintText: hintName,
-        hintStyle: const TextStyle(color: AppColor.textHintColor,fontFamily: 'Poppins',fontWeight: FontWeight.normal,fontSize: 18),
+        hintStyle: const TextStyle(color: AppColor.textHintColor,
+            fontFamily: 'Poppins',fontWeight: FontWeight.normal,fontSize: 18),
         contentPadding: const EdgeInsets.symmetric(horizontal: 0,vertical: 15 ),
         filled: true,
         fillColor: AppColor.textFieldColor,
@@ -142,7 +141,8 @@ class SubmitButton extends StatelessWidget{
       height: 48,
       color: AppColor.mainColor,
       onPressed: () {},
-      child: const Text('Search',style: TextStyle(color: Colors.white,fontSize: 18,fontWeight: FontWeight.w500, fontFamily: 'Poppins'),),
+      child: const Text('Search',style: TextStyle(color: Colors.white,
+          fontSize: 18,fontWeight: FontWeight.w500, fontFamily: 'Poppins'),),
     );
   }
 }
@@ -165,11 +165,14 @@ class HouseCard extends StatelessWidget{
               const Spacer(),
               const Icon(Icons.arrow_forward_ios_rounded,color: AppColor.textHintColor,size: 20,),
             ],),
-const SizedBox(height: 5,),
-            Row(children:  [
-              SvgPicture.asset('assets/icons/FilterIcon.svg',height: 12,width: 12,),
-              const SizedBox(width: 20,),
-              const Text('\$1.5k+/2 Beds/Appt. ... 3 more',style:TextStyle(fontWeight: FontWeight.normal,fontSize: 16,fontFamily: 'Poppins',color: AppColor.cardBodyText)),
+              const SizedBox(height: 5,),
+              Row(children:  [
+                  SvgPicture.asset('assets/icons/FilterIcon.svg',height: 12,width: 12,),
+                  const SizedBox(width: 20,),
+                  const Text('\$1.5k+/2 Beds/Appt. ... 3 more',
+                  style:TextStyle(fontWeight: FontWeight.normal,
+                      fontSize: 16,fontFamily: 'Poppins',
+                      color: AppColor.cardBodyText)),
             ],),
 
           ],
