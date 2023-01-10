@@ -61,18 +61,21 @@ class SearchField extends StatelessWidget{
             fontFamily: 'Poppins',fontWeight: FontWeight.normal,fontSize: 18),
         contentPadding: const EdgeInsets.symmetric(horizontal: 0,vertical: 15 ),
         filled: true,
-        fillColor: SharedPreference.getData(key: 'Appearance')? Colors.white:AppColor.scaffoldBackgroundColor,
+        fillColor: SharedPreference.getData(key: 'Appearance')?
+        Colors.white:AppColor.scaffoldBackgroundColor,
         prefixIcon: prefix,
         enabledBorder: OutlineInputBorder(
           borderSide:
           BorderSide(width: 1,
-            color: SharedPreference.getData(key: 'Appearance')? Colors.white:AppColor.scaffoldBackgroundColor,),
+            color: SharedPreference.getData(key: 'Appearance')?
+            Colors.white:AppColor.scaffoldBackgroundColor,),
           borderRadius: BorderRadius.circular(4),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide:
           BorderSide(width: 1.5,
-            color: SharedPreference.getData(key: 'Appearance')? Colors.white:AppColor.scaffoldBackgroundColor,),
+            color: SharedPreference.getData(key: 'Appearance')?
+            Colors.white:AppColor.scaffoldBackgroundColor,),
           borderRadius: BorderRadius.circular(4),
         ),
       ),
@@ -122,7 +125,8 @@ class HouseCard extends StatelessWidget{
       builder: (context, state) {
         var homeData = HomeViewModelCubit.get(context);
         return Container(
-          color: homeData.appearanceBool? Colors.white:AppColor.scaffoldBackgroundColor,
+          color: homeData.appearanceBool?
+          Colors.white:AppColor.scaffoldBackgroundColor,
           height: 110,
           width: double.infinity,
           child: Padding(
@@ -130,17 +134,20 @@ class HouseCard extends StatelessWidget{
             child: Column(
               children: [
                 Row(children: [
-                  Text('${homeData.listTitle![index]}, CA',style: Theme.of(context).textTheme.titleLarge,),
+                  Text('${homeData.listTitle![index]}, CA',
+                    style: Theme.of(context).textTheme.titleLarge,),
                   const Spacer(),
                   const Icon(Icons.arrow_forward_ios_rounded,color: AppColor.textHintColor,size: 20,),
                 ],),
                 const SizedBox(height: 5,),
                 Row(children:  [
-                  SvgPicture.asset('assets/icons/FilterIcon.svg',height: 12,width: 12,),
+                  SvgPicture.asset('assets/icons/FilterIcon.svg',
+                    height: 12,width: 12,),
                   const SizedBox(width: 20,),
                   const Text('\$1.5k+/2 Beds/Appt. ... 3 more',
                       style:TextStyle(fontWeight: FontWeight.normal,
-                          fontSize: 16,fontFamily: 'Poppins',color: AppColor.cardBodyText)),
+                          fontSize: 16,fontFamily: 'Poppins',
+                          color: AppColor.cardBodyText)),
                 ],),
 
               ],
